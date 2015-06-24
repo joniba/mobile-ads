@@ -18,10 +18,11 @@ describe('offers', function () {
         ca_api_id: settings.apiId,
         ca_api_token: settings.apiToken
       }).done(function (result) {
+        console.log(result);
         result.should.have.length(10);
-        result[0].should.have.property('io_id');
+        result[0].should.have.property('io_external_offer_id');
         result[0].should.have.property('io_app_name');
-
+        
         done();
       });
     });
